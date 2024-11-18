@@ -21,7 +21,7 @@ const OurApproach = () => {
                                 ОСТАВИТЬ ЗАЯВКУ НА САЙТЕ
                             </h3>
                             <p className="text-[#0000007a] text-sm sm:text-base leading-relaxed">
-                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites.
+                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites.
                             </p>
                         </div>
                         <div className="absolute inset-x-0 bottom-0">
@@ -46,7 +46,7 @@ const OurApproach = () => {
                                 АНАЛИЗ ВАШИХ ДАННЫХ
                             </h3>
                             <p className="text-[#0000007a] text-sm sm:text-base leading-relaxed">
-                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites.
+                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for orem ipsum will uncover many web sites.
                             </p>
                         </div>
                         <div className="absolute bottom-0">
@@ -72,7 +72,7 @@ const OurApproach = () => {
                             ПОДБОР ОПТИМАЛЬНОЙ КРЕДИТНОЙ ПРОГРАММЫ
                         </h3>
                         <p className="text-[#0000007a] text-sm sm:text-base leading-relaxed">
-                            Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites.
+                            Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites.
                         </p>
                     </div>
                     <div className="lg:w-1/3">
