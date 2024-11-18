@@ -14,8 +14,17 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 
+interface ComponentItem {
+  title: string;
+  href: string;
+}
 
-const components = [
+interface ComponentCategory {
+  category: string;
+  items: ComponentItem[];
+}
+
+const components: ComponentCategory[] = [
   {
     category: "Категория 1",
     items: [
@@ -60,9 +69,12 @@ const components = [
 
 const HeaderMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-  const [openCategories, setOpenCategories] = React.useState({})
+  
+  // Define state type for openCategories
+  const [openCategories, setOpenCategories] = React.useState<{ [key: string]: boolean }>({})
 
-  const toggleCategory = (category) => {
+  // Type the category parameter as string
+  const toggleCategory = (category: string) => {
     setOpenCategories((prev) => ({
       ...prev,
       [category]: !prev[category],
@@ -81,30 +93,25 @@ const HeaderMenu = () => {
                     <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 lg:w-[600px] bg-foreground text-white">
-                      {components.map((category) => (
-                        <div key={category.category}>
-                          <h3 className="py-2 font-semibold">{category.category}</h3>
-                          <ul>
-                            {category.items.map((item) => (
-                              <ListItem 
-                                key={item.href} 
-                                title={item.title} 
-                                href={item.href}>
-                                
-                              </ListItem>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                        {components.map((category) => (
+                          <div key={category.category}>
+                            <h3 className="py-2 font-semibold">{category.category}</h3>
+                            <ul>
+                              {category.items.map((item) => (
+                                <ListItem 
+                                  key={item.href} 
+                                  title={item.title} 
+                                  href={item.href}>
+                                </ListItem>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-
-
-
-
             </li>
             <li>
               <Link href="/about" className="">О нас</Link>
@@ -121,7 +128,6 @@ const HeaderMenu = () => {
           </ul>
         </nav>
         <Button
-          variant="ghost"
           size="icon"
           className="text-white md:hidden"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}

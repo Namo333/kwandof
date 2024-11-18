@@ -37,7 +37,7 @@ const InputForm = () => {
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit() {
     toast({
       title: "Форма успепшно отправленна!",
     })
