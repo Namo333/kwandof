@@ -188,12 +188,12 @@ const HeaderMenu = () => {
 
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <Link href="/" className="text-white font-bold">
-          <Image
-            src='/img/Logo.svg'
-            width={100}
-            height={100}
-            alt="Logo"
-          />
+            <Image
+              src='/img/Logo.svg'
+              width={100}
+              height={100}
+              alt="Logo"
+            />
           </Link>
         </div>
 
