@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
+import TestForm from "./activeComp/TestForm"
 
 interface ComponentItem {
   title: string;
@@ -26,43 +27,48 @@ interface ComponentCategory {
 
 const components: ComponentCategory[] = [
   {
-    category: "Категория 1",
+    category: "Помощь в получении кредита",
     items: [
-      { title: "Alert Dialog", href: "/docs/primitives/alert-dialog" },
-      { title: "Hover Card", href: "/docs/primitives/hover-card" },
-      { title: "Progress", href: "/docs/primitives/progress" },
-      { title: "Scroll-area", href: "/docs/primitives/scroll-area" },
-      { title: "Tabs", href: "/docs/primitives/tabs" },
+      { title: "Помощь в кредите", href: "/docs/primitives/alert-dialog" },
+      { title: "Кредитный брокер", href: "/docs/primitives/hover-card" },
+      { title: "Кредит пенсионерам", href: "/docs/primitives/progress" },
+      { title: "Кредит безработным", href: "/docs/primitives/scroll-area" },
+      { title: "Помощь в кредите без предоплаты", href: "/docs/primitives/tabs" },
     ],
   },
   {
-    category: "Категория 2",
+    category: "Кредит наличными",
     items: [
-      { title: "Tooltip", href: "/docs/primitives/tooltip" },
-      { title: "Accordion", href: "/docs/primitives/accordion" },
-      { title: "Dialog", href: "/docs/primitives/dialog" },
-      { title: "Dropdown", href: "/docs/primitives/dropdown" },
-      { title: "Popover", href: "/docs/primitives/popover" },
+      { title: "Одобрение кредита", href: "/docs/primitives/tooltip" },
+      { title: "Взять кредит в Москве", href: "/docs/primitives/accordion" },
+      { title: "Кредит без справок", href: "/docs/primitives/accordion" },
+      { title: "Кредит с плохой кредитной историей", href: "/docs/primitives/accordion" },
+      { title: "Взять кредит", href: "/docs/primitives/accordion" },
     ],
   },
   {
-    category: "Категория 3",
+    category: "Кредит под залог",
     items: [
-      { title: "Avatar", href: "/docs/primitives/avatar" },
-      { title: "Checkbox", href: "/docs/primitives/checkbox" },
-      { title: "Radio Group", href: "/docs/primitives/radio-group" },
-      { title: "Switch", href: "/docs/primitives/switch" },
-      { title: "Slider", href: "/docs/primitives/slider" },
+      { title: "Кредит под залог квартиры", href: "/docs/primitives/avatar" },
+      { title: "Кредит под залог комнаты", href: "/docs/primitives/checkbox" },
+      { title: "Кредит под залог недвижимости", href: "/docs/primitives/radio-group" },
+      { title: "Кредит под залог дома", href: "/docs/primitives/switch" },
+      { title: "Кредит под залог земли", href: "/docs/primitives/slider" },
+      { title: "Кредит под залог ПТС", href: "/docs/primitives/slider2" },
     ],
   },
   {
-    category: "Категория 4",
+    category: "Кредит для бизнеса",
     items: [
-      { title: "Separator", href: "/docs/primitives/separator" },
-      { title: "Button", href: "/docs/primitives/button" },
-      { title: "Toggle Group", href: "/docs/primitives/toggle-group" },
-      { title: "Badge", href: "/docs/primitives/badge" },
-      { title: "Toast", href: "/docs/primitives/toast" },
+      { title: "Кредит для ИП", href: "/docs/primitives/separator" },
+      { title: "Кредит для ООО", href: "/docs/primitives/button" },
+    ],
+  },
+  {
+    category: "Помощь в получении ипотеки",
+    items: [
+      { title: "Помощь в ипотеке", href: "/docs/primitives/tooltip" },
+      { title: "Ипотечный брокер", href: "/docs/primitives/accordion" },
     ],
   },
 ]
@@ -92,7 +98,7 @@ const HeaderMenu = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 lg:w-[600px] bg-foreground text-white">
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 lg:w-[900px] bg-foreground text-white">
                         {components.map((category) => (
                           <div key={category.category}>
                             <h3 className="py-2 font-semibold">{category.category}</h3>
@@ -180,12 +186,10 @@ const HeaderMenu = () => {
                 <li><Link href="/blog" className="">Блог</Link></li>
                 <li><Link href="/contacts" className="">Контакты</Link></li>
                 <li>
-                  <Button className="bg-white text-black hover:bg-slate-100 mt-4 w-full rounded-[16px]">
-                    Оставить заявку
-                    <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.2 9.67L4.14 9.75H4.24H5.19143H5.21643L5.23143 9.73L7.93143 6.13L7.95393 6.1L7.93143 6.07L5.23143 2.47L5.21643 2.45H5.19143H4.24H4.14L4.2 2.53L6.8775 6.1L4.2 9.67ZM0.96 9.67L0.9 9.75H1H1.95143H1.97643L1.99143 9.73L4.69143 6.13L4.71393 6.1L4.69143 6.07L1.99143 2.47L1.97643 2.45H1.95143H1H0.9L0.96 2.53L3.6375 6.1L0.96 9.67Z" fill="black" stroke="black" strokeWidth="0.1"/>
-                    </svg>
-                  </Button>
+                  <TestForm 
+                    buttonClass="bg-white text-black hover:bg-slate-100 mt-4 w-full rounded-[16px]"
+                    svgColor="black"
+                  />
                 </li>
               </ul>
             </nav>
@@ -204,12 +208,10 @@ const HeaderMenu = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button className="bg-white text-black hover:bg-slate-100 px-[30px] rounded-[16px]">
-            Оставить заявку
-            <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.2 9.67L4.14 9.75H4.24H5.19143H5.21643L5.23143 9.73L7.93143 6.13L7.95393 6.1L7.93143 6.07L5.23143 2.47L5.21643 2.45H5.19143H4.24H4.14L4.2 2.53L6.8775 6.1L4.2 9.67ZM0.96 9.67L0.9 9.75H1H1.95143H1.97643L1.99143 9.73L4.69143 6.13L4.71393 6.1L4.69143 6.07L1.99143 2.47L1.97643 2.45H1.95143H1H0.9L0.96 2.53L3.6375 6.1L0.96 9.67Z" fill="black" stroke="black" strokeWidth="0.1"/>
-            </svg>
-          </Button>
+          <TestForm 
+            buttonClass="bg-white text-black hover:bg-slate-100 px-[30px] rounded-[16px]"
+            svgColor="black"
+          />
         </div>
 
       </div>

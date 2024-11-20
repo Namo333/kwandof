@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import TestForm from './activeComp/TestForm';
 
 const HeroSection: React.FC = () => {
   const heroAnimationVariants = {
@@ -40,23 +41,10 @@ const HeroSection: React.FC = () => {
             Помогаем получить кредит на выгодных условиях, даже если банк отказал. Упростим одобрение и подбор под ваши нужды.
           </p>
           <div className="flex gap-5 max-[380px]:flex-col max-[380px]:gap-2 w-full">
-            <Button className="bg-foreground text-white px-[30px] rounded-[16px] p-[15px]">
-              Оставить заявку
-              <svg
-                width="9"
-                height="11"
-                viewBox="0 0 9 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.2 9.67L4.14 9.75H4.24H5.19143H5.21643L5.23143 9.73L7.93143 6.13L7.95393 6.1L7.93143 6.07L5.23143 2.47L5.21643 2.45H5.19143H4.24H4.14L4.2 2.53L6.8775 6.1L4.2 9.67ZM0.96 9.67L0.9 9.75H1H1.95143H1.97643L1.99143 9.73L4.69143 6.13L4.71393 6.1L4.69143 6.07L1.99143 2.47L1.97643 2.45H1.95143H1H0.9L0.96 2.53L3.6375 6.1L0.96 9.67Z"
-                  fill="white"
-                  stroke="black"
-                  strokeWidth="0.1"
-                />
-              </svg>
-            </Button>
+            <TestForm 
+              buttonClass='bg-foreground text-white px-[30px] rounded-[16px] p-[15px]'
+            />
+
             <Button className="bg-white text-black px-[30px] rounded-[16px] border-2 border-black p-[15px]">
               Узнать больше
               <svg

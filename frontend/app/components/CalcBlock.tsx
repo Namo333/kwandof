@@ -5,6 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Container from "./Container";
+import TestForm from "./activeComp/TestForm";
 
 // Определение типов пропсов для InfoBlock
 interface InfoBlockProps {
@@ -128,9 +129,10 @@ const CalcBlock = () => {
                 />
               </div>
             </div>
-            <Button className="bg-white px-[20px] lg:px-[30px] rounded-[16px] py-[10px] lg:py-[15px] w-full lg:w-[200px]">
-              Оставить заявку
-            </Button>
+            <TestForm
+              buttonClass="bg-white px-[20px] lg:px-[30px] rounded-[16px] py-[10px] lg:py-[15px] w-full lg:w-[200px]"
+              svgColor="black"
+            />
           </div>
 
           <div className="flex flex-wrap gap-[20px] lg:gap-[30px] justify-center items-center w-full max-w-[1440px] mx-auto">
