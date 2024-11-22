@@ -39,7 +39,7 @@ const InputForm = () => {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
-      const response = await fetch("http://localhost:8000/submit-simple-form/", {
+      const response = await fetch("https://kwandof.vercel.app/api/submit-simple-form/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

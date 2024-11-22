@@ -7,6 +7,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:3000",
+    "https://kwandof-1iev.vercel.app/"
 ]
 
 app.add_middleware(
