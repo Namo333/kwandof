@@ -84,17 +84,47 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
       step5: { lastName: "", firstName: "", email: "", phone: "", message: "" },
     },
   })
-
-  const onSubmit = (data: FormData) => {
-    toast({
-      title: "Форма успешно отправлена!",
-      description: "Спасибо за прохождение теста.",
-    })
-    console.log(data)
-    setStep(1)
-    form.reset()
-    setIsDialogOpen(false)
-  }
+  
+  const onSubmit = async (data: FormData) => {
+    // Преобразование вложенной структуры в плоскую
+    const flattenedData = {
+      ...data.step1,
+      ...data.step2,
+      ...data.step3,
+      ...data.step4,
+      ...data.step5,
+    };
+  
+    try {
+      const response = await fetch('http://localhost:8000/submit-form/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(flattenedData), // Отправляем преобразованные данные
+      });
+  
+      if (!response.ok) {
+        throw new Error('Ошибка отправки формы');
+      }
+  
+      toast({
+        title: "Форма успешно отправлена!",
+        description: "Спасибо за прохождение теста.",
+      });
+  
+      setStep(1);
+      form.reset();
+      setIsDialogOpen(false);
+    } catch (error) {
+      toast({
+        title: "Ошибка!",
+        description: error.message || "Произошла ошибка при отправке данных.",
+        variant: "destructive",
+      });
+    }
+  };
+  
 
   const nextStep = async () => {
     const stepSchemas = [step1Schema, step2Schema, step3Schema, step4Schema, step5Schema]
