@@ -13,7 +13,11 @@ const page = () => {
                         </div>
                         <p className="text-lg text-gray-800 ">Юристы нашей компании имеют многолетний опыт работы в финансовой сфере, грамотно и на высоком уровне подготавливают документы, а также проводят процедуру банкротства.</p>
                         <figure>
-                          <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                          <img
+                            src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
+                            alt="Blog Image"
+                            className="w-full object-cover rounded-xl"
+                          />
                           <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
                             A woman sitting at a table.
                           </figcaption>
