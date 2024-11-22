@@ -10,8 +10,6 @@ import Reviews from "../components/pages/Reviews";
 import Faq from "../components/pages/Faq";
 import Test from "../components/pages/Test";
 
-import ContactMenu from "../components/pages/ContactMenu";
-
 import { motion } from "framer-motion";
 
 const SECTIONS = [
@@ -46,7 +44,6 @@ const Home: React.FC = () => {
           </motion.div>
         ))}
       </main>
-      <ContactMenu/>
     </Container>
   );
 };

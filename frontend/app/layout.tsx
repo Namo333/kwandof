@@ -4,6 +4,8 @@ import Container from "../components/pages/Container";
 import HeaderMenu from "../components/pages/HeaderMenu";
 import FooterSection from "../components/pages/FooterSection";
 
+import ContactMenu from "@/components/pages/ContactMenu";
+
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
@@ -25,6 +27,7 @@ export default function RootLayout({
           <HeaderMenu/>
         </Container>
         {children}
+        <ContactMenu/>
         <Toaster />
         <footer className="full-width">
           <FooterSection/>

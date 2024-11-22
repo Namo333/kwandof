@@ -23,7 +23,7 @@ const ContactMenu: React.FC = () => {
             className="p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 focus:outline-none flex gap-[10px] items-center"
           >
             <Phone className="h-4 w-4" />
-            <p>Напиши нам</p>
+            <p>Позвони нам</p>
           </motion.button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">

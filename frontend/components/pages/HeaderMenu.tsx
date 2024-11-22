@@ -28,49 +28,50 @@ const components: ComponentCategory[] = [
   {
     category: "Помощь в получении кредита",
     items: [
-      { title: "Помощь в кредите", href: "/services/primitives/alert-dialog" },
-      { title: "Кредитный брокер", href: "/services/primitives/hover-card" },
-      { title: "Кредит пенсионерам", href: "/services/primitives/progress" },
-      { title: "Кредит безработным", href: "/services/primitives/scroll-area" },
-      { title: "Помощь в кредите без предоплаты", href: "/services/primitives/tabs" },
+      { title: "Помощь в кредите", href: "/services/help/creditassistance" },
+      { title: "Кредитный брокер", href: "/services/help/creditbroker" },
+      { title: "Кредит пенсионерам", href: "/services/help/credittopensioners" }, 
+      { title: "Кредит безработным", href: "/services/help/creditforunemployed" }, 
+      { title: "Помощь в кредите без предоплаты", href: "/services/help/creditwithoutprepayment" },
     ],
   },
   {
     category: "Кредит наличными",
     items: [
-      { title: "Одобрение кредита", href: "/services/primitives/tooltip" },
-      { title: "Взять кредит в Москве", href: "/services/primitives/accordion" },
-      { title: "Кредит без справок", href: "/services/primitives/accordion" },
-      { title: "Кредит с плохой кредитной историей", href: "/services/primitives/accordion" },
-      { title: "Взять кредит", href: "/services/primitives/accordion" },
+      { title: "Одобрение кредита", href: "/services/cash/creditapproval" }, 
+      { title: "Взять кредит в Москве", href: "/services/cash/takecreditinmoscow" }, 
+      { title: "Кредит без справок", href: "/services/cash/creditwithoutdocuments" }, 
+      { title: "Кредит с плохой кредитной историей", href: "/services/cash/creditwithbadcredit" }
     ],
   },
   {
     category: "Кредит под залог",
     items: [
-      { title: "Кредит под залог квартиры", href: "/services/primitives/avatar" },
-      { title: "Кредит под залог комнаты", href: "/services/primitives/checkbox" },
-      { title: "Кредит под залог недвижимости", href: "/services/primitives/radio-group" },
-      { title: "Кредит под залог дома", href: "/services/primitives/switch" },
-      { title: "Кредит под залог земли", href: "/services/primitives/slider" },
-      { title: "Кредит под залог ПТС", href: "/services/primitives/slider2" },
+      { title: "Кредит под залог квартиры", href: "/services/pledge/creditagainstapartment" },
+      { title: "Кредит под залог комнаты", href: "/services/pledge/creditagainstroom" }, 
+      { title: "Кредит под залог недвижимости", href: "/services/pledge/creditagainstproperty" }, 
+      { title: "Кредит под залог дома", href: "/services/pledge/creditagainsthouse" }, 
+      { title: "Кредит под залог земли", href: "/services/pledge/creditagainstland" }, 
+      { title: "Кредит под залог ПТС", href: "/services/pledge/creditagainstpts" },
     ],
   },
   {
     category: "Кредит для бизнеса",
     items: [
-      { title: "Кредит для ИП", href: "/services/primitives/separator" },
-      { title: "Кредит для ООО", href: "/services/primitives/button" },
+      { title: "Кредит для ИП", href: "/services/business/creditforindividual" }, 
+      { title: "Кредит для ООО", href: "/services/business/creditforlegalentity" }, 
     ],
   },
   {
     category: "Помощь в получении ипотеки",
     items: [
-      { title: "Помощь в ипотеке", href: "/services/primitives/tooltip" },
-      { title: "Ипотечный брокер", href: "/services/primitives/accordion" },
+      { title: "Помощь в ипотеке", href: "/services/mortgages/mortgageassistance" }, 
+      { title: "Ипотечный брокер", href: "/services/mortgages/mortgagebroker" }, 
     ],
   },
 ]
+
+
 
 const HeaderMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
