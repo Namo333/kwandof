@@ -1,11 +1,10 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from app.schemas.form_schema import ApplicationForm
-
 from get_env import SENDER, RECEIVER, SMTP_SERVER, PORT, LOGIN, PASSWORD
 
-def send_email(form_data: ApplicationForm):
+def send_email(form_data):
+    # Настройки
     sender = SENDER
     receiver = RECEIVER
     smtp_server = SMTP_SERVER
@@ -13,13 +12,7 @@ def send_email(form_data: ApplicationForm):
     login = LOGIN
     password = PASSWORD
 
-    # Создание MIMEMultipart сообщения
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = "Новая заявка на кредит"
-    msg["From"] = sender
-    msg["To"] = receiver
-
-    # Создание текстового и HTML-тела письма
+    # Формируем текстовое и HTML содержимое
     text = f"""\
 Новая заявка на кредит:
 - Услуга: {form_data.service}
@@ -52,17 +45,19 @@ def send_email(form_data: ApplicationForm):
 </html>
 """
 
-    # Добавление текстового и HTML-тела в сообщение
-    part1 = MIMEText(text, "plain")
-    part2 = MIMEText(html, "html")
-    msg.attach(part1)
-    msg.attach(part2)
+    # Формируем сообщение
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = "Новая заявка на кредит"
+    msg["From"] = sender
+    msg["To"] = receiver
+    msg.attach(MIMEText(text, "plain"))
+    msg.attach(MIMEText(html, "html"))
 
+    # Отправка письма
     try:
-        # Установление соединения и отправка
         with smtplib.SMTP(smtp_server, port) as server:
-            server.login(login, password)  # Авторизация
-            server.sendmail(sender, receiver, msg.as_string())  # Отправка письма
+            server.login(login, password)
+            server.sendmail(sender, receiver, msg.as_string())
         print("Email успешно отправлен.")
     except Exception as e:
-        raise Exception(f"Ошибка отправки email: {str(e)}")
+        print(f"Ошибка отправки email: {str(e)}")
