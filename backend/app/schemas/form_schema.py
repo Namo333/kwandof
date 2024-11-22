@@ -7,6 +7,13 @@ class ApplicationForm(BaseModel):
     incomeConfirmation: str
     lastName: str
     firstName: str
-    email: str
+    email: EmailStr
+    phone: str
+    message: str
+
+class ApplicationForm2(BaseModel):
+    lastName: str
+    firstName: str
+    email: EmailStr
     phone: str
     message: str

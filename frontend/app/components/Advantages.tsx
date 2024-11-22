@@ -7,7 +7,6 @@ const Advantages = () => {
     return (
         <section className="flex justify-between items-center gap-[20px] max-md:flex-col">
             <div className="">
-                <h2 className="text-gray-800 font-semibold sm:text-xl text-lg">ПРЕИМУЩЕСТВА</h2>
                 <h3 className="italic text-[28px] sm:text-[35px] font-extrabold leading-tight">ПРЕИМУЩЕСТВА РАБОТЫ 
                 С НАМИ</h3>
                 <p className="text-[#0000007a] my-[15px] max-w-md leading-[23px]">

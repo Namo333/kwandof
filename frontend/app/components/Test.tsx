@@ -11,7 +11,9 @@ const Test = () => {
                 <p className="text-[#ffffff67] my-[15px] max-w-md leading-[23px] text-center">
                     Пройдите простой тест за 1 минуту и увеличьте шансы на одобрение кредита!
                 </p>
-                <TestForm/>
+                <TestForm
+                    buttonText='Пройти тест'
+                />
             </main>
         </section>
     )

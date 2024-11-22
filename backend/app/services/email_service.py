@@ -61,3 +61,51 @@ def send_email(form_data):
         print("Email успешно отправлен.")
     except Exception as e:
         print(f"Ошибка отправки email: {str(e)}")
+
+
+def send_email_simple(form_data):
+    sender = SENDER
+    receiver = RECEIVER
+    smtp_server = SMTP_SERVER
+    port = PORT
+    login = LOGIN
+    password = PASSWORD
+
+    text = f"""\
+Новая заявка:
+- Фамилия: {form_data.lastName}
+- Имя: {form_data.firstName}
+- Почта: {form_data.email}
+- Телефон: {form_data.phone}
+- Сообщение: {form_data.message}
+"""
+
+    html = f"""\
+<html>
+  <body>
+    <h1>Новая заявка</h1>
+    <ul>
+      <li><b>Фамилия:</b> {form_data.lastName}</li>
+      <li><b>Имя:</b> {form_data.firstName}</li>
+      <li><b>Почта:</b> {form_data.email}</li>
+      <li><b>Телефон:</b> {form_data.phone}</li>
+      <li><b>Сообщение:</b> {form_data.message}</li>
+    </ul>
+  </body>
+</html>
+"""
+
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = "Новая заявка"
+    msg["From"] = sender
+    msg["To"] = receiver
+    msg.attach(MIMEText(text, "plain"))
+    msg.attach(MIMEText(html, "html"))
+
+    try:
+        with smtplib.SMTP(smtp_server, port) as server:
+            server.login(login, password)
+            server.sendmail(sender, receiver, msg.as_string())
+        print("Email успешно отправлен.")
+    except Exception as e:
+        print(f"Ошибка отправки email: {str(e)}")

@@ -60,7 +60,6 @@ const CalcBlock = () => {
           {/* Блок ввода значений */}
           <div className="flex flex-col gap-[20px] lg:gap-[30px] w-full lg:w-[500px]">
             <div>
-              <h2 className="text-white font-semibold text-lg sm:text-xl">КАЛЬКУЛЯТОР</h2>
               <h3 className="italic text-[28px] sm:text-[35px] text-white font-extrabold leading-tight">
                 ВСЕ В ОДНОЙ ПЛАТФОРМЕ ДЛЯ ЭКОНОМИИ ВРЕМЕНИ
               </h3>

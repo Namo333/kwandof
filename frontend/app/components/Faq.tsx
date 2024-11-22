@@ -12,7 +12,6 @@ const Faq = () =>{
     return (
         <section className="flex flex-col gap-[30px]">
             <div className="max-w-[450px] m-auto">
-                <h2 className="text-gray-800 font-semibold text-lg sm:text-xl text-center">FAQ</h2>
                 <h3 className="italic text-[24px] sm:text-[28px] lg:text-[35px] font-extrabold leading-tight text-center mt-2">
                     ОТВЕТЫ НА САМЫЕ ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
                 </h3>

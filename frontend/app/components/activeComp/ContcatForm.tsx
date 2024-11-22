@@ -37,10 +37,30 @@ const InputForm = () => {
     },
   })
 
-  function onSubmit() {
-    toast({
-      title: "Форма успепшно отправленна!",
-    })
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    try {
+      const response = await fetch("http://localhost:8000/submit-simple-form/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        toast({ title: result.message })
+      } else {
+        const errorData = await response.json()
+        throw new Error(errorData.detail || "Ошибка отправки формы")
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка отправки формы",
+        description: String(error),
+        variant: "destructive",
+      })
+    }
   }
 
   return (
