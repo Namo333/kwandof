@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from app.get_env import SENDER, RECEIVER, SMTP_SERVER, PORT, LOGIN, PASSWORD
+from api.get_env import SENDER, RECEIVER, SMTP_SERVER, PORT, LOGIN, PASSWORD
 
 def send_email(form_data):
     # Настройки
