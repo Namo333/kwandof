@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Container from "./components/Container";
-import HeaderMenu from "./components/HeaderMenu";
-import FooterSection from "./components/FooterSection";
+import Container from "../components/pages/Container";
+import HeaderMenu from "../components/pages/HeaderMenu";
+import FooterSection from "../components/pages/FooterSection";
 
 import { Toaster } from "@/components/ui/toaster"
 

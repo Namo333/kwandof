@@ -1,16 +1,16 @@
 "use client"
 
 import React from "react";
-import Container from "./components/Container";
-import HeroSection from "./components/HeroSection";
-import Advantages from "./components/Advantages";
-import CalcBlock from "./components/CalcBlock";
-import OurApproach from "./components/OurApproach";
-import Reviews from "./components/Reviews";
-import Faq from "./components/Faq";
-import Test from "./components/Test";
+import Container from "../components/pages/Container";
+import HeroSection from "../components/pages/HeroSection";
+import Advantages from "../components/pages/Advantages";
+import CalcBlock from "../components/pages/CalcBlock";
+import OurApproach from "../components/pages/OurApproach";
+import Reviews from "../components/pages/Reviews";
+import Faq from "../components/pages/Faq";
+import Test from "../components/pages/Test";
 
-import ContactMenu from "./components/ContactMenu";
+import ContactMenu from "../components/pages/ContactMenu";
 
 import { motion } from "framer-motion";
 
