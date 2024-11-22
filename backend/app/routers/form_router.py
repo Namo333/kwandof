@@ -5,7 +5,7 @@ from app.services.email_service import send_email, send_email_simple
 
 router = APIRouter()
 
-@router.post("/submit-form/")
+@router.post("/api/submit-form/")
 async def submit_form(form_data: ApplicationForm):
     try:
         send_email(form_data)
@@ -13,7 +13,7 @@ async def submit_form(form_data: ApplicationForm):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Ошибка отправки формы: {str(e)}")
     
-@router.post("/submit-simple-form/")
+@router.post("/api/submit-simple-form/")
 async def submit_simple_form(form_data: ApplicationForm2):
     try:
         send_email_simple(form_data)
