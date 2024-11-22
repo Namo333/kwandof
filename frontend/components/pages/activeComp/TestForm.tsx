@@ -117,13 +117,20 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
       form.reset();
       setIsDialogOpen(false);
     } catch (error) {
+      // Проверка типа ошибки
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Произошла ошибка при отправке данных.";
+  
       toast({
         title: "Ошибка!",
-        description: error.message || "Произошла ошибка при отправке данных.",
+        description: errorMessage,
         variant: "destructive",
       });
     }
   };
+  
   
 
   const nextStep = async () => {
@@ -370,7 +377,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
               {renderStep()}
             </div>
             <div className="flex justify-between">
-              <Button type="button" onClick={prevStep} disabled={step === 1} variant="outline">
+              <Button type="button" onClick={prevStep} disabled={step === 1}>
                 Назад
               </Button>
               {step < 5 ? (
