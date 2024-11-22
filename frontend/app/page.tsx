@@ -9,6 +9,9 @@ import OurApproach from "./components/OurApproach";
 import Reviews from "./components/Reviews";
 import Faq from "./components/Faq";
 import Test from "./components/Test";
+
+import ContactMenu from "./components/ContactMenu";
+
 import { motion } from "framer-motion";
 
 const SECTIONS = [
@@ -43,6 +46,7 @@ const Home: React.FC = () => {
           </motion.div>
         ))}
       </main>
+      <ContactMenu/>
     </Container>
   );
 };

@@ -126,7 +126,7 @@ const InputForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Textarea placeholder="Сообщение" {...field} />
+                <Textarea className="max-h-[200px] min-h-[200px]" placeholder="Сообщение" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

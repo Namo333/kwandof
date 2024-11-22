@@ -10,7 +10,7 @@ import TestForm from "./activeComp/TestForm";
 
 const Faq = () =>{
     return (
-        <section className="flex flex-col gap-[30px]">
+        <section className="flex flex-col gap-[30px]" id="faq">
             <div className="max-w-[450px] m-auto">
                 <h3 className="italic text-[24px] sm:text-[28px] lg:text-[35px] font-extrabold leading-tight text-center mt-2">
                     ОТВЕТЫ НА САМЫЕ ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ

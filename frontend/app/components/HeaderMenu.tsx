@@ -126,10 +126,10 @@ const HeaderMenu = () => {
               <Link href="/news" className="">Новости</Link>
             </li>
             <li>
-              <Link href="/reviews" className="">Отзывы</Link>
+              <a href="#reviews" className="">Отзывы</a>
             </li>
             <li>
-              <Link href="/contacts" className="">Контакты</Link>
+              <a href="#contact-us" className="">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -182,14 +182,18 @@ const HeaderMenu = () => {
                 </li>
 
                 <li><Link href="/about" className="">О нас</Link></li>
-                <li><Link href="/projects" className="">Проекты</Link></li>
-                <li><Link href="/blog" className="">Блог</Link></li>
-                <li><Link href="/contacts" className="">Контакты</Link></li>
+                <li><Link href="/news" className="">Новости</Link></li>
+                <li><a href="#reviews" className="">Отзывы</a></li>
+                <li><a href="#contact-us" className="">Контакты</a></li>
                 <li>
-                  <TestForm 
-                    buttonClass="bg-white text-black hover:bg-slate-100 mt-4 w-full rounded-[16px]"
-                    svgColor="black"
-                  />
+                  <div className="text-center md:text-start md:order-2 md:flex md:justify-end md:items-center">
+                    <a href="tel:+74951284454" className="me-5 inline-block text-sm text-white">
+                        +7 (495) 128-44-54
+                    </a>
+                    <p className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border-2 border-white text-white">
+                        Ежедневно 9:00-19:00
+                    </p>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -208,10 +212,14 @@ const HeaderMenu = () => {
         </div>
 
         <div className="hidden md:block">
-          <TestForm 
-            buttonClass="bg-white text-black hover:bg-slate-100 px-[30px] rounded-[16px]"
-            svgColor="black"
-          />
+          <div className="text-center md:text-start md:order-2 md:flex md:justify-end md:items-center">
+            <a href="tel:+74951284454" className="me-5 inline-block text-sm text-white">
+                +7 (495) 128-44-54
+            </a>
+            <p className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border-2 border-white text-white">
+                Ежедневно 9:00-19:00
+            </p>
+          </div>
         </div>
 
       </div>
