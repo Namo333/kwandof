@@ -128,7 +128,6 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
 
   const nextStep = async () => {
     const stepSchemas = [step1Schema, step2Schema, step3Schema, step4Schema, step5Schema]
-    const currentStepSchema = stepSchemas[step - 1]
     const stepKey = `step${step}` as keyof FormData
     const isValid = await form.trigger(stepKey)
     if (isValid) {

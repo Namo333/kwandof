@@ -13,7 +13,6 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import TestForm from "./activeComp/TestForm"
 
 interface ComponentItem {
   title: string;
@@ -120,16 +119,16 @@ const HeaderMenu = () => {
               </NavigationMenu>
             </li>
             <li>
-              <Link href="/about" className="">О нас</Link>
+              <Link href="/about">О нас</Link>
             </li>
             <li>
-              <Link href="/news" className="">Новости</Link>
+              <Link href="/news">Новости</Link>
             </li>
             <li>
-              <a href="#reviews" className="">Отзывы</a>
+              <a href="#reviews">Отзывы</a>
             </li>
             <li>
-              <a href="#contact-us" className="">Контакты</a>
+              <a href="#contact-us">Контакты</a>
             </li>
           </ul>
         </nav>
