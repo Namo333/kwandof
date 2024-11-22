@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
-from app.schemas.form_schema import ApplicationForm, ApplicationForm2
-from app.services.email_service import send_email, send_email_simple
+from api.schemas.form_schema import ApplicationForm, ApplicationForm2
+from api.services.email_service import send_email, send_email_simple
 
 router = APIRouter()
 
