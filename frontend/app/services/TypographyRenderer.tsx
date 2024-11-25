@@ -1,5 +1,6 @@
 import React from "react";
 import CalcBlock from "@/components/pages/CalcBlock";
+import Advantages from "@/components/pages/Advantages";
 
 interface ContentBlock {
   subtitle?: string;
@@ -26,7 +27,13 @@ const TypographyRenderer: React.FC<TypographyRendererProps> = ({ title, blocks }
               {paragraph}
             </p>
           ))}
-          {index === 1 && <div className="full-width py-[90px]"><CalcBlock/></div>}
+          {index === 1 && 
+            <div className="py-[90px] flex flex-col gap-[90px]">
+              <Advantages/>
+              <div className="full-width">
+                <CalcBlock/>
+              </div>
+            </div>}
         </div>
       ))}
     </div>
