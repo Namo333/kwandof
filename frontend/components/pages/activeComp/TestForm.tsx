@@ -193,7 +193,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input type="number" placeholder="Введите сумму (от 50.000)" {...field} />
+                  <Input className="border-[1px] border-[#00000020]" type="number" placeholder="Введите сумму (от 50.000)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -276,7 +276,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
         )
       case 5:
         return (
-          <>
+          <div className="flex flex-col gap-[10px]">
             <div className="flex gap-[10px]">
               <FormField
                 control={form.control}
@@ -284,7 +284,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormControl>
-                      <Input placeholder="Фамилия" {...field} />
+                      <Input className="border-[1px] border-[#00000020]" placeholder="Фамилия" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -296,7 +296,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormControl>
-                      <Input placeholder="Имя" {...field} />
+                      <Input className="border-[1px] border-[#00000020]" placeholder="Имя" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -309,7 +309,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Почта" {...field} />
+                    <Input className="border-[1px] border-[#00000020]" placeholder="Почта" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -321,7 +321,7 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Номер телефона" {...field} />
+                    <Input className="border-[1px] border-[#00000020]" placeholder="Номер телефона" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -333,13 +333,13 @@ const MultiStepTestForm: FC<MultiStepTestFormProps> = ({ buttonClass, buttonText
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea placeholder="Сообщение" {...field} />
+                    <Textarea className="border-[1px] border-[#00000020]" placeholder="Сообщение" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          </>
+          </div>
         )
       default:
         return null
