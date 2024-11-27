@@ -27,7 +27,6 @@ export default function RootLayout({
           <HeaderMenu/>
         </Container>
         {children}
-        <ContactMenu/>
         <Toaster />
         <footer className="full-width">
           <FooterSection/>

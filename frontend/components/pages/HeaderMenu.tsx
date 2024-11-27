@@ -90,8 +90,8 @@ const HeaderMenu = () => {
   return (
     <header className="bg-[#111111] rounded-[20px] mt-[31px]">
       <div className="flex h-16 items-center justify-between px-[31px]">
-        <nav>
-          <ul className="hidden md:flex gap-6 ml-auto text-white justify-between items-center">
+        <nav className="">
+          <ul className="hidden md:flex gap-2 ml-auto text-white justify-between items-center max-lg:text-[13px]">
             <li>
               <NavigationMenu>
                 <NavigationMenuList>
@@ -200,7 +200,7 @@ const HeaderMenu = () => {
           </div>
         )}
 
-        <div className="absolute left-1/2 transform -translate-x-1/2">
+        <div className="absolute left-1/2 transform -translate-x-1/2 md:hidden">
           <Link href="/" className="text-white font-bold">
             <Image
               src='/img/Logo.svg'
@@ -213,15 +213,14 @@ const HeaderMenu = () => {
 
         <div className="hidden md:block">
           <div className="text-center md:text-start md:order-2 md:flex md:justify-end md:items-center">
-            <a href="tel:+74951284454" className="me-5 inline-block text-sm text-white">
+            <a href="tel:+74951284454" className="me-2 max-lg:text-[13px] inline-block text-sm text-white">
                 +7 (495) 128-44-54
             </a>
-            <p className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border-2 border-white text-white">
+            <p className="py-2 px-3 max-lg:text-[13px] inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border-2 border-white text-white">
                 Ежедневно 9:00-19:00
             </p>
           </div>
         </div>
-
       </div>
     </header>
   )
