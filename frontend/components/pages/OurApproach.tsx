@@ -60,7 +60,7 @@ const OurApproach = () => {
                 </div>
 
                 {/* Второй ряд карточек */}
-                <div className="bg-[#F6F7F9] w-full h-auto p-6 sm:p-8 rounded-lg flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6">
+                <div className="bg-[#F6F7F9] w-full h-auto py-6 pl-6 sm:pl-8 sm:py-8 rounded-lg flex flex-col lg:flex-row items-center justify-between gap-6">
                     <div className="flex flex-col gap-4 lg:w-2/3">
                         <div className="bg-[#457AE9] rounded-full p-4 text-white w-10 h-10 flex items-center justify-center font-bold text-xl">
                             3
@@ -72,7 +72,7 @@ const OurApproach = () => {
                             Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites.
                         </p>
                     </div>
-                    <div className="lg:w-1/3">
+                    <div className="lg:w-2/3">
                         <Image
                             src="/img/vibor.svg"
                             alt="bg"
