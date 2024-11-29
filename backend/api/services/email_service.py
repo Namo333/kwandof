@@ -3,15 +3,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from api.get_env import SENDER, RECEIVER, SMTP_SERVER, PORT, LOGIN, PASSWORD
 
-def send_email(form_data):
-    # Настройки
-    sender = SENDER
-    receiver = RECEIVER
-    smtp_server = SMTP_SERVER
-    port = PORT
-    login = LOGIN
-    password = PASSWORD
 
+def send_email(form_data):
     # Формируем текстовое и HTML содержимое
     text = f"""\
 Новая заявка на кредит:
@@ -48,29 +41,23 @@ def send_email(form_data):
     # Формируем сообщение
     msg = MIMEMultipart("alternative")
     msg["Subject"] = "Новая заявка на кредит"
-    msg["From"] = sender
-    msg["To"] = receiver
+    msg["From"] = SENDER
+    msg["To"] = RECEIVER
     msg.attach(MIMEText(text, "plain"))
     msg.attach(MIMEText(html, "html"))
 
     # Отправка письма
     try:
-        with smtplib.SMTP(smtp_server, port) as server:
-            server.login(login, password)
-            server.sendmail(sender, receiver, msg.as_string())
+        with smtplib.SMTP(SMTP_SERVER, PORT) as server:
+            server.starttls()  # Начинаем TLS
+            server.login(LOGIN, PASSWORD)
+            server.sendmail(SENDER, RECEIVER, msg.as_string())
         print("Email успешно отправлен.")
     except Exception as e:
         print(f"Ошибка отправки email: {str(e)}")
 
 
 def send_email_simple(form_data):
-    sender = SENDER
-    receiver = RECEIVER
-    smtp_server = SMTP_SERVER
-    port = PORT
-    login = LOGIN
-    password = PASSWORD
-
     text = f"""\
 Новая заявка:
 - Фамилия: {form_data.lastName}
@@ -97,15 +84,16 @@ def send_email_simple(form_data):
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = "Новая заявка"
-    msg["From"] = sender
-    msg["To"] = receiver
+    msg["From"] = SENDER
+    msg["To"] = RECEIVER
     msg.attach(MIMEText(text, "plain"))
     msg.attach(MIMEText(html, "html"))
 
     try:
-        with smtplib.SMTP(smtp_server, port) as server:
-            server.login(login, password)
-            server.sendmail(sender, receiver, msg.as_string())
+        with smtplib.SMTP(SMTP_SERVER, PORT) as server:
+            server.starttls()
+            server.login(LOGIN, PASSWORD)
+            server.sendmail(SENDER, RECEIVER, msg.as_string())
         print("Email успешно отправлен.")
     except Exception as e:
         print(f"Ошибка отправки email: {str(e)}")
