@@ -1,8 +1,13 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from api.get_env import SENDER, RECEIVER, SMTP_SERVER, PORT, LOGIN, PASSWORD
+from api.get_env import LOGIN, PASSWORD
 
+# Конфигурация почтового сервиса
+SENDER = "nikita0388344@gmail.com"
+RECEIVER = "nikita0388344@gmail.com"
+SMTP_SERVER = "smtp.mailmug.net"
+PORT = 2525 
 
 def send_email(form_data):
     # Формируем текстовое и HTML содержимое
@@ -46,10 +51,9 @@ def send_email(form_data):
     msg.attach(MIMEText(text, "plain"))
     msg.attach(MIMEText(html, "html"))
 
-    # Отправка письма
+    # Отправка письма через SSL
     try:
         with smtplib.SMTP(SMTP_SERVER, PORT) as server:
-            server.starttls()  # Начинаем TLS
             server.login(LOGIN, PASSWORD)
             server.sendmail(SENDER, RECEIVER, msg.as_string())
         print("Email успешно отправлен.")
@@ -91,7 +95,6 @@ def send_email_simple(form_data):
 
     try:
         with smtplib.SMTP(SMTP_SERVER, PORT) as server:
-            server.starttls()
             server.login(LOGIN, PASSWORD)
             server.sendmail(SENDER, RECEIVER, msg.as_string())
         print("Email успешно отправлен.")
