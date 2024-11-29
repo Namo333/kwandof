@@ -24,11 +24,9 @@ const OurApproach = () => {
                             </p>
                         </div>
                         <div className="absolute inset-x-0 bottom-0">
-                            <Image
+                            <img
                                 src="/img/down.png"
                                 alt="bg"
-                                width={412.14}
-                                height={286.66}
                                 loading="lazy"
                                 className="w-full"
                             />
@@ -48,9 +46,9 @@ const OurApproach = () => {
                                 Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for orem ipsum will uncover many web sites.
                             </p>
                         </div>
-                        <div className="absolute bottom-0">
+                        <div className="">
                             <Image
-                                src="/img/analiz.svg"
+                                src="/img/menu.svg"
                                 alt="bg"
                                 width={1}
                                 height={1}
