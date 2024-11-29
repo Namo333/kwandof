@@ -6,7 +6,8 @@ from api.routers import form_router
 app = FastAPI()
 
 origins = [
-    "https://kwandof-1iev.vercel.app/"
+    "https://kwandof-1iev.vercel.app",
+    "https://kwandof.vercel.app"
 ]
 
 app.add_middleware(
