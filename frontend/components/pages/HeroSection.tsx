@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
           <p className="text-[#0000007a] w-[400px] leading-[28px] max-lg:w-[350px] max-lg:leading-[22px] max-xl:w-[400px]">
             Помогаем получить кредит на выгодных условиях, даже если банк отказал. Упростим одобрение и подбор под ваши нужды.
           </p>
-          <div className="flex gap-5 max-[380px]:flex-col max-[380px]:gap-2 w-full">
+          <div className="">
             <TestForm 
               buttonClass='bg-foreground text-white px-[30px] rounded-[16px] p-[15px]'
             />
