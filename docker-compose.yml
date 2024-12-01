@@ -7,21 +7,24 @@ services:
     ports:
       - "80:80"
     volumes:
-      - './nginx.conf:/etc/nginx/nginx.conf'
+      - './frontend/nginx.conf:/etc/nginx/nginx.conf'
     depends_on:
       - backend
       - frontend
     networks:
       - dev
-    
+    restart: always   # Автозапуск nginx при перезагрузке
+
   backend:
     build:
       context: ./backend
     networks:
       - dev
+    restart: always   # Автозапуск backend при перезагрузке
 
   frontend:
     build:
       context: ./frontend
     networks:
       - dev
+    restart: always   # Автозапуск frontend при перезагрузке

@@ -60,7 +60,7 @@ const CalcBlock = () => {
           <div className="flex flex-col gap-[20px] lg:gap-[30px] w-full lg:w-[500px]">
             <div>
               <h3 className="italic text-[28px] sm:text-[35px] text-white font-extrabold leading-tight">
-                ВСЕ В ОДНОЙ ПЛАТФОРМЕ ДЛЯ ЭКОНОМИИ ВРЕМЕНИ
+                ВСЕ В ОДНОЙ ПЛАТФОРМЕ ДЛЯ ЭКОНОМИИ ВРЕМЕНИ!
               </h3>
             </div>
             <div className="flex flex-col gap-[20px] w-full lg:w-[424px]">
