@@ -10,7 +10,7 @@ COPY package.json package-lock.json ./
 # Устанавливаем зависимости
 RUN npm install
 
-# Копируем все файлы в рабочую директорию
+# Копируем все файлы проекта в рабочую директорию контейнера
 COPY . .
 
 # Строим проект Next.js
@@ -22,17 +22,18 @@ FROM node:alpine
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем зависимости для production-окружения
-COPY package.json package-lock.json ./
-RUN npm install --production
+# Копируем только необходимые файлы из текущей директории
+COPY ./.next ./.next
+COPY ./public ./public
+COPY ./next.config.js ./next.config.js
+COPY ./package.json ./package.json
+COPY ./package-lock.json ./package-lock.json
 
-# Копируем собранные файлы из предыдущего этапа
-COPY --from=build /app/.next ./.next
-COPY --from=build /app/public ./public
-COPY --from=build /app/next.config.js ./next.config.js
+# Устанавливаем только production зависимости
+RUN npm install --production
 
 # Экспонируем порт
 EXPOSE 3000
 
-# Команда для запуска приложения
+# Запускаем приложение
 CMD ["npm", "start"]
