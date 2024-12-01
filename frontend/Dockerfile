@@ -10,7 +10,7 @@ COPY package.json package-lock.json ./
 # Устанавливаем зависимости
 RUN npm install
 
-# Копируем все файлы проекта в рабочую директорию контейнера
+# Копируем весь проект в контейнер
 COPY . .
 
 # Строим проект Next.js
@@ -23,9 +23,9 @@ FROM node:alpine
 WORKDIR /app
 
 # Копируем только необходимые файлы из текущей директории
-COPY ./.next ./.next
+COPY --from=build /app/.next ./.next
 COPY ./public ./public
-COPY ./next.config.js ./next.config.js
+COPY ./next.config.mjs ./next.config.mjs
 COPY ./package.json ./package.json
 COPY ./package-lock.json ./package-lock.json
 
